@@ -13,14 +13,8 @@ class RegisterScreen extends StatelessWidget {
       border: Border(
       ),
         middle: Text('Регистрация'),
-        trailing: CupertinoButton(
-        child: Icon(CupertinoIcons.back,
-        color: Colors.black,
-        size: 16,
       ),
-        onPressed: () {},
-      ),
-      ),
+     
        
       child: SafeArea(
         child: Column(
