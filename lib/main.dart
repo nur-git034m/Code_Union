@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_appl/src/screens/auth/auth_screen.dart';
+import 'package:flutter_appl/src/screens/auth/register_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
-      home: AuthScreen(),
+      home: RegisterScreen(),
     );
   }
 }

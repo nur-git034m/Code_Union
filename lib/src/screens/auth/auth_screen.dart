@@ -11,12 +11,16 @@ class AuthScreen extends StatelessWidget {
       backgroundColor: Color(0xFFF3F4F6),
       border: Border(),
         middle: Text('Авторизация'),
+  
       ),
+    
+
       child: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+             SizedBox(height: 32,
+            ),
             CupertinoTextField(
             decoration: BoxDecoration(
             color: CupertinoColors.white,
