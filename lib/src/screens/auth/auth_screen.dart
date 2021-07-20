@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_appl/src/common/constants/color_constants.dart';
+import 'package:flutter_appl/src/common/constants/padding_constants.dart';
 import 'package:flutter_appl/src/router/routing_const.dart';
-import 'package:flutter_appl/src/screens/auth/register_screen.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({key}) : super(key: key);
@@ -23,13 +24,7 @@ class AuthScreen extends StatelessWidget {
           children: [
              SizedBox(height: 32,
             ),
-            CupertinoTextField(
-            decoration: BoxDecoration(
-            color: CupertinoColors.white,
-            ),
-              placeholder: 'Логин или почта',
-              padding: const EdgeInsets.symmetric(vertical: 19, horizontal: 16),
-            ),
+            CustomTextField(),
              Container(
               height: 1,
               color: Color(0xFFE0E6ED),
@@ -43,10 +38,10 @@ class AuthScreen extends StatelessWidget {
             ),
             
             Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: AppPaddings.horizontal,
       child: CupertinoButton(
         padding: const EdgeInsets.symmetric(vertical: 20),
-        color: Color(0xFF4631D2),
+        color: AppColors.main,
         child: Text('Войти',
          style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -56,10 +51,10 @@ class AuthScreen extends StatelessWidget {
              SizedBox(height: 19,
             ),
             Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: AppPaddings.horizontal,
       child: CupertinoButton(
         padding: const EdgeInsets.symmetric(vertical: 20),
-        color: Color(0xFF4631D2),
+        color: AppColors.main,
       
         child: Text('Зарегистрироваться',
          style: TextStyle(
@@ -69,10 +64,31 @@ class AuthScreen extends StatelessWidget {
         onPressed: () {
         Navigator.pushNamed(context, RegisterRoute);
         },
-      ),),
+      ),
+      ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({
+    key,
+    this.placeholder = 'Введите',
+  }) : super(key: key);
+
+  final String placeholder;
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoTextField(
+      placeholder: placeholder,
+      decoration: BoxDecoration(
+        color: CupertinoColors.white,
+      ),
+      padding: const EdgeInsets.symmetric(vertical: 19, horizontal: 16),
     );
   }
 }

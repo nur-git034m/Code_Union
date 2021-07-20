@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_appl/src/common/constants/color_constants.dart';
+import 'package:flutter_appl/src/common/constants/padding_constants.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({key}) : super(key: key);
@@ -73,10 +75,10 @@ class RegisterScreen extends StatelessWidget {
             
             Padding(
   
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: AppPaddings.horizontal,
       child: CupertinoButton(
         padding: const EdgeInsets.symmetric(vertical: 20),
-        color: Color(0xFF4631D2),
+        color: AppColors.main,
         child: Text('Создать аккаунт',
          style: TextStyle(fontWeight: FontWeight.bold),
         ),
