@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_appl/src/common/constants/color_constants.dart';
-import 'package:flutter_appl/src/common/constants/padding_constants.dart';
+import 'package:flutter_appl/src/common/constants/app_color.dart';
+import 'package:flutter_appl/src/common/constants/app_paddings.dart';
 import 'package:flutter_appl/src/router/routing_const.dart';
 
 class AuthScreen extends StatelessWidget {
-  const AuthScreen({key}) : super(key: key);
+  const AuthScreen({ Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
