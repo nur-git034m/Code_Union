@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_appl/src/common/constants/color_constants.dart';
-import 'package:flutter_appl/src/common/constants/padding_constants.dart';
+import 'package:flutter_appl/src/common/constants/app_color.dart';
+import 'package:flutter_appl/src/common/constants/app_paddings.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({key}) : super(key: key);
+  const RegisterScreen({ Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
