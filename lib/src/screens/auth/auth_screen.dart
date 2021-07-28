@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_appl/src/common/constants/app_color.dart';
 import 'package:flutter_appl/src/common/constants/app_paddings.dart';
+import 'package:flutter_appl/src/common/models/tokens_model.dart';
 import 'package:flutter_appl/src/common/widgets/custom_divider.dart';
 import 'package:flutter_appl/src/router/routing_const.dart';
 import 'package:dio/dio.dart';
@@ -78,15 +79,15 @@ class _AuthScreenState extends State<AuthScreen> {
         'password': passwordController.text,
       },
     );
-     print(response.data['tokens']['accessToken']);
-     
-      tokensBox.put('access', response.data['tokens']['accessToken']);
-      tokensBox.put('refresh', response.data['tokens']['refreshToken']);
-      print(tokensBox.get('access'));
-      print(tokensBox.get('refresh'));
+    TokensModel tokensModel = TokensModel.fromJson(
+      response.data['tokens'],
+    );
+       
+      Box tokensBox = Hive.box("tokens");
+     tokensBox.put('access', tokensModel.access);
+     tokensBox.put('refresh', tokensModel.refresh);
       Navigator.pushReplacementNamed(context, MainRoute);
         } on DioError catch (e) {
-          print(e.response!.data);
            showCupertinoModalPopup(
       context: context,
       builder: (context) {
