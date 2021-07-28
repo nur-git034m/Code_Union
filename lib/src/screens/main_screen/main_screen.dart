@@ -9,7 +9,11 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
+    return WillPopScope(
+      onWillPop: (){
+        return Future.value(false);
+      },
+     child: CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         items: [
           BottomNavigationBarItem(icon: Icon(CupertinoIcons.timelapse)),
@@ -36,6 +40,7 @@ class MainScreen extends StatelessWidget {
           },
         );
       },
+    ),
     );
   }
 }
