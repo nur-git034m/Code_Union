@@ -11,7 +11,7 @@ class CustomTextField extends StatelessWidget {
     Key? key,
     this.placeholder = "Введите",
     this.suffix,
-    this.controller,
+    this.controller, keyboardType, obscureText,
   }) : super(key: key);
 
   @override
