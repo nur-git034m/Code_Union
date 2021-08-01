@@ -3,7 +3,7 @@ import 'package:flutter_appl/src/common/constants/app_color.dart';
 
 class CustomButton extends StatelessWidget {
   final String labelText;
-  final GestureTapCallback onPressed;
+  final VoidCallback? onPressed;
   const CustomButton({
     Key? key, required this.onPressed, this.labelText = "Кнопка",
   }) : super(key: key);

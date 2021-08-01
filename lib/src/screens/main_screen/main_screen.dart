@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_appl/src/screens/auth/register_screen.dart';
 import 'package:flutter_appl/src/screens/auth/auth_screen.dart';
 import 'package:flutter_appl/src/screens/profile/profile_screen.dart';
+import 'package:flutter_appl/src/screens/register/register_screen.dart';
 import 'package:flutter_appl/src/screens/timeline/timeline_screen.dart';
-
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
 
