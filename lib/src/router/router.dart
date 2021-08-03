@@ -1,5 +1,7 @@
 
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_appl/src/common/dependencies/injection_container.dart';
 import 'package:flutter_appl/src/router/routing_const.dart';
 import 'package:flutter_appl/src/screens/auth/auth_screen.dart';
 import 'package:flutter_appl/src/screens/auth/bloc/log_in_bloc.dart';
@@ -14,7 +16,9 @@ class AppRouter {
       case AuthRoute:
         return CupertinoPageRoute(
           builder: (context) => BlocProvider(
-             create: (context) => LogInBloc(),
+             create: (context) => LogInBloc(
+                dio: getIt<Dio>(),
+             ),
            child: AuthScreen(),
           ),
         );
@@ -22,7 +26,7 @@ class AppRouter {
         return CupertinoPageRoute(
           builder: (context) =>
               BlocProvider(
-                create: (context) => SignUpBloc(),
+                create: (context) => SignUpBloc(dio: getIt<Dio>(),),
                 child: RegisterScreen(),
               ),
         );
@@ -32,7 +36,7 @@ class AppRouter {
         return CupertinoPageRoute(
           builder: (context) =>
               BlocProvider(
-                create: (context) => LogInBloc(),
+                create: (context) => LogInBloc(dio: getIt<Dio>()),
                 child: AuthScreen(),
               ),
         );

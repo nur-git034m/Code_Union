@@ -5,7 +5,9 @@ class CustomButton extends StatelessWidget {
   final String labelText;
   final VoidCallback? onPressed;
   const CustomButton({
-    Key? key, required this.onPressed, this.labelText = "Кнопка",
+    Key? key,
+    required this.onPressed,
+    this.labelText = "Кнопка",
   }) : super(key: key);
 
   @override

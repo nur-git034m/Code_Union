@@ -61,18 +61,14 @@ class TimelineScreen extends StatelessWidget {
                                       shoppingCenter.name,
                                       style: AppTextStyles.headline2,
                                     ),
-                                    Text(
-                                      shoppingCenter.description,
-                                      style: AppTextStyles.description2),
-                                    Text(
-                                      shoppingCenter.address,
-                                      style: AppTextStyles.description2),
-
+                                    Text(shoppingCenter.description,
+                                        style: AppTextStyles.description2),
+                                    Text(shoppingCenter.address,
+                                        style: AppTextStyles.description2),
                                   ],
                                 ),
                               ),
-                              Expanded(
-                                  child: Icon(CupertinoIcons.heart)),
+                              Expanded(child: Icon(CupertinoIcons.heart)),
                             ],
                           )
                         ],

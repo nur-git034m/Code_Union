@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_appl/src/common/constants/app_color.dart';
 
-
 class CustomTextField extends StatelessWidget {
   final String placeholder;
   final Widget? suffix;
@@ -11,7 +10,9 @@ class CustomTextField extends StatelessWidget {
     Key? key,
     this.placeholder = "Введите",
     this.suffix,
-    this.controller, keyboardType, obscureText,
+    this.controller,
+    keyboardType,
+    obscureText,
   }) : super(key: key);
 
   @override

@@ -35,19 +35,12 @@ class ProfileDescription extends StatelessWidget {
         SizedBox(
           height: 15,
         ),
-        Text(
-          name,
-          textAlign: TextAlign.center,
-          style: AppTextStyles.headline1
-        ),
+        Text(name, textAlign: TextAlign.center, style: AppTextStyles.headline1),
         SizedBox(
           height: 12,
         ),
-        Text(
-          email,
-          textAlign: TextAlign.center,
-          style: AppTextStyles.description1
-        ),
+        Text(email,
+            textAlign: TextAlign.center, style: AppTextStyles.description1),
       ],
     );
   }
