@@ -5,7 +5,7 @@ class SearchTextField extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  @override 
+  @override
   Widget build(BuildContext context) {
     return CupertinoTextField(
       prefix: Padding(

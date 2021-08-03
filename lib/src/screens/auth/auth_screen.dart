@@ -1,14 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_appl/src/common/constants/app_color.dart';
 import 'package:flutter_appl/src/common/constants/app_paddings.dart';
-import 'package:flutter_appl/src/common/models/tokens_model.dart';
 import 'package:flutter_appl/src/common/widgets/custom_button.dart';
 import 'package:flutter_appl/src/common/widgets/custom_divider.dart';
 import 'package:flutter_appl/src/router/routing_const.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_appl/src/screens/auth/bloc/log_in_bloc.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -63,10 +60,9 @@ class _AuthScreenState extends State<AuthScreen> {
               child: BlocConsumer<LogInBloc, LogInState>(
                 listener: (context, state) {
                   // TODO: implement listener
-                  if (state is LogInLoaded){
+                  if (state is LogInLoaded) {
                     Navigator.pushNamed(context, MainRoute);
-                  }
-                  else if (state is LogInFailed){
+                  } else if (state is LogInFailed) {
                     showCupertinoModalPopup(
                       context: context,
                       builder: (context) {
@@ -87,12 +83,13 @@ class _AuthScreenState extends State<AuthScreen> {
                 builder: (context, state) {
                   return CustomButton(
                     labelText: "Войти",
-                    onPressed: state is LogInLoading ? null : () {
-                      context.read<LogInBloc>().add(LogInPressed(
-                          password: passwordController.text,
-                          email: emailController.text)
-                          );
-                    },
+                    onPressed: state is LogInLoading
+                        ? null
+                        : () {
+                            context.read<LogInBloc>().add(LogInPressed(
+                                password: passwordController.text,
+                                email: emailController.text));
+                          },
                   );
                 },
               ),

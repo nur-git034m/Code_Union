@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ProfileDescription(
-            imagePath:"assets/images/profile.jpg",
+            imagePath: "assets/images/profile.jpg",
             name: "Nurgeldi Sertay",
             email: "nur034m@gmail.com",
           ),

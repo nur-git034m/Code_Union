@@ -10,7 +10,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/sign_up_bloc.dart';
 
-
 class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-class ShoppingCenter{
+class ShoppingCenter {
   final String name;
   final String description;
   final String address;

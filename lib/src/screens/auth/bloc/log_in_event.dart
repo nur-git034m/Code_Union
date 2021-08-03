@@ -7,9 +7,8 @@ class LogInPressed extends LogInEvent {
   final String? email;
   final String? password;
 
-
   LogInPressed({
-   required this.email,
-   required this.password,
+    required this.email,
+    required this.password,
   });
 }

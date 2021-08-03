@@ -12,8 +12,11 @@ part 'sign_up_event.dart';
 part 'sign_up_state.dart';
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
-  SignUpBloc() : super(SignUpInitial());
-  final Dio dio = Dio();
+  final Dio dio;
+
+  SignUpBloc({
+    required this.dio,
+  }) : super(SignUpInitial());
   final Box tokensBox = Hive.box('tokens');
 
   @override
@@ -23,10 +26,10 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     // TODO: implement mapEventToState
     if (event is SignUpPressed) {
       yield SignUpLoading();
-      print("i am working well");
+
       try {
         Response response = await dio.post(
-          'http://api.codeunion.kz/api/v1/auth/registration/customer/new',
+          'auth/registration',
           data: {
             "email": event.email,
             "nickname": event.login,

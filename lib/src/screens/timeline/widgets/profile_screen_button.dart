@@ -5,7 +5,9 @@ class ProfileScreenButton extends StatelessWidget {
   final String labelText;
   final GestureTapCallback onPressed;
   const ProfileScreenButton({
-    Key? key, this.labelText = "Выйти", required this.onPressed,
+    Key? key,
+    this.labelText = "Выйти",
+    required this.onPressed,
   }) : super(key: key);
 
   @override
